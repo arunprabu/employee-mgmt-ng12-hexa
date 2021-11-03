@@ -17,7 +17,7 @@ export class CebComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  handleSendData(){
+  handleSendData(): void{
     console.log("Will send data soon");
   }
 
