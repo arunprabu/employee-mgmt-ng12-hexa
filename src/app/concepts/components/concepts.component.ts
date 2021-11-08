@@ -24,6 +24,10 @@ export class ConceptsComponent implements OnInit {
   // custom event binding related
   dataReceivedFromParentComp = '';
 
+  // directive related
+  isLoggedIn = false;
+  skillList = ['html', 'css', 'js', 'ts', 'ng'];
+
   constructor() { }
 
   ngOnInit(): void {
