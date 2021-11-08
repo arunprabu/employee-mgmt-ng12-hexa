@@ -21,6 +21,9 @@ export class ConceptsComponent implements OnInit {
   // custom propery binding related
   personAge = 50;
 
+  // custom event binding related
+  dataReceivedFromParentComp = '';
+
   constructor() { }
 
   ngOnInit(): void {
@@ -33,5 +36,11 @@ export class ConceptsComponent implements OnInit {
     event.target.disabled = true;
     event.target.innerText = "Clicked";
   }  
+
+  // Step 6 of CEB
+  handleReportGenerated(event: any){ // event will carry the data sent from child comp
+    console.log(event);
+    this.dataReceivedFromParentComp = event;
+  }
 
 }
