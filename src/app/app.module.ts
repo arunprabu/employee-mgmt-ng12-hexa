@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +16,7 @@ import { CebComponent } from './concepts/components/ceb/ceb.component';
 import { ColorizerDirective } from './concepts/directives/colorizer.directive';
 import { AddEmployeeComponent } from './employees/components/add-employee/add-employee.component';
 import { EmployeeDetailsComponent } from './employees/components/employee-details/employee-details.component';
+import { HttpClientModule } from '@angular/common/http';
 
 // Main Switching Box
 @NgModule({
@@ -37,7 +38,9 @@ import { EmployeeDetailsComponent } from './employees/components/employee-detail
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   // AppModule in turn bootstrapped with a comp -- AppComponent
