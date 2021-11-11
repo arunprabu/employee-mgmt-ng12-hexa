@@ -1,6 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { map } from 'rxjs/operators';
+import { Employee } from '../models/employee';
 import { EmployeeService } from '../services/employee.service';
 
 @Component({
@@ -11,7 +10,7 @@ import { EmployeeService } from '../services/employee.service';
 })
 export class EmployeesComponent implements OnInit {
 
-  employeeList: any[] = [];
+  employeeList: Employee[] = [];
 
   constructor( private employeeService: EmployeeService ) {  // 1. connect with the service using DI
     console.log('Inside Constructor');
@@ -24,7 +23,7 @@ export class EmployeesComponent implements OnInit {
     
     // // 2. send req to the service
     this.employeeService.getEmployees()
-      .subscribe( (res: any) => {
+      .subscribe( (res: Employee[]) => {
         // 3. get res from service
         console.log(res);
         this.employeeList = res;

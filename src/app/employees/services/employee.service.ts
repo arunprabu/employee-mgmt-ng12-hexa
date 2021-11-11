@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { Employee } from '../models/employee';
+import { Observable } from 'rxjs';
 
 // Decorator
 @Injectable({
@@ -28,14 +30,14 @@ export class EmployeeService {
   }
 
   // 1. get the req from comp ts 
-  getEmployees(): any { 
+  getEmployees(): Observable<Employee[]> { 
     console.log('Inside Service');
     // 2. send the req to the REST API 
       // 2.1 What's the REST API URL? https://jsonplaceholder.typicode.com/users
       // 2.2 What's the HTTP Method? GET
       // 2.3 What's the REST API Client? HttpClient 
-    return this.http.get('https://jsonplaceholder.typicode.com/users')
-      .pipe( map( (res: any)=> { // 3. get the res from the REST API 
+    return this.http.get<Employee[]>('https://jsonplaceholder.typicode.com/users')
+      .pipe( map( (res: Employee[])=> { // 3. get the res from the REST API 
         // convert/transform, add, remove, filter, sort 
         console.log(res);
         return res; // 4. send the res to the comp ts 
