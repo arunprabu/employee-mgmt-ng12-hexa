@@ -3,23 +3,21 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AboutComponent } from './about/about.component';
 import { ConceptsComponent } from './concepts/components/concepts.component';
-import { AddEmployeeComponent } from './employees/components/add-employee/add-employee.component';
-import { EmployeeDetailsComponent } from './employees/components/employee-details/employee-details.component';
-import { EmployeesComponent } from './employees/components/employees.component';
 import { HomeComponent } from './home/home.component';
 
 // Configuring the Routes/URLs 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'concepts', component: ConceptsComponent },
-  { path: 'employees', component: EmployeesComponent },
-  { path: 'employees/add', component: AddEmployeeComponent },
-  { path: 'employees/:id', component: EmployeeDetailsComponent }, // URL param is id
-  { path: 'about', component: AboutComponent },
+  { 
+    path: 'employees', 
+    loadChildren: () => import('./employees/employees.module').then(m => m.EmployeesModule)
+  },
+  { path: 'about', component: AboutComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes)], // registering routes
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
