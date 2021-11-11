@@ -34,8 +34,9 @@ export class EmployeeService {
       // 2.1 What's the REST API URL? https://jsonplaceholder.typicode.com/users
       // 2.2 What's the HTTP Method? GET
       // 2.3 What's the REST API Client? HttpClient 
-    return this.http.get('https://jsonplaceholder.typicode.com/users') 
+    return this.http.get('https://jsonplaceholder.typicode.com/users')
       .pipe( map( (res: any)=> { // 3. get the res from the REST API 
+        // convert/transform, add, remove, filter, sort 
         console.log(res);
         return res; // 4. send the res to the comp ts 
       }));

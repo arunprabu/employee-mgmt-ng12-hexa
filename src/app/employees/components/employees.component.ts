@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { map } from 'rxjs/operators';
 import { EmployeeService } from '../services/employee.service';
 
 @Component({
@@ -20,14 +22,14 @@ export class EmployeesComponent implements OnInit {
     // will be called whenever this comp comes into view automatically after constructor
     // ideal place for you to send ajax calls
     
-    // 2. send req to the service
+    // // 2. send req to the service
     this.employeeService.getEmployees()
       .subscribe( (res: any) => {
         // 3. get res from service
         console.log(res);
         this.employeeList = res;
       });
-    
+
   }
 
 }
