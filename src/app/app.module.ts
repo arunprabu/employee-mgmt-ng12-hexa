@@ -15,6 +15,7 @@ import { CebComponent } from './concepts/components/ceb/ceb.component';
 import { ColorizerDirective } from './concepts/directives/colorizer.directive';
 import { HttpClientModule } from '@angular/common/http';
 import { EmployeesModule } from './employees/employees.module';
+import { LoginComponent } from './auth/components/login/login.component';
 
 // Main Switching Box
 @NgModule({
@@ -28,7 +29,8 @@ import { EmployeesModule } from './employees/employees.module';
     AboutComponent,
     CpbComponent,
     CebComponent,
-    ColorizerDirective
+    ColorizerDirective,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
