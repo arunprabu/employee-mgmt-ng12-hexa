@@ -1,1 +1,21 @@
-<p>about works!</p>
+<div class="container">
+  <h2>Pipes</h2>
+  <p>{{featureName}}</p>
+  <p>{{featureName | uppercase }}</p>
+  <p>{{featureName | lowercase }}</p>
+
+  <hr>
+  <p>{{today}}</p>
+  <p>{{today | date }}</p> <!-- date pipe without any params -->
+  <p>{{today | date: 'dd/MMM/yyyy hh:mm:ss a' }}</p> <!-- date pipe with params -->
+  <p>{{today | date: 'MMMM dd, yyyy hh:mm:ss a' }}</p> <!-- parameterised pipe -->
+
+  <hr>
+  <p>TODO: ng g p ellipsis </p>
+  <p>For More Ref:
+    https://github.com/arunprabu/soti-front-end-oct2021/blob/main/user-manager-ng-app/src/app/shared/pipes/ellipsis.pipe.ts
+  </p>
+  <p> Ref:
+    https://github.com/arunprabu/soti-front-end-oct2021/blob/main/user-manager-ng-app/src/app/about/components/about.component.html
+  </p>
+</div>
